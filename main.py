@@ -20,16 +20,6 @@ class Cliente:
     cpf: str
     senha: str
 
-def buscarCliente(vetor):
-    name = input("\nDigite o nome do cliente: ")
-    for clientes in vetor:
-        if clientes.nome == name:
-            print("\nCliente encontrado!")
-            return clientes
-        else:
-            print("\nCliente nao encontrado")
-            return None
-
 lista_clientes = []
 
 while True:
@@ -92,8 +82,8 @@ while True:
                     clientes.endereco_cliente.rua = input("Qual a nova rua? ")
                     clientes.endereco_cliente.numero = int(input("Qual o novo numero?"))
                 break
-            else:
-                print("\nCliente nao encontrado!")
+        if clientes.nome != name:
+            print("\nCliente nao encontrado!")
 
     if escolha == 4:
         name = input("\nDigite o nome do cliente: ")
@@ -101,8 +91,8 @@ while True:
             if clientes.nome == name:
                 lista_clientes.remove(clientes)
                 break
-            else:
-                print("\nCliente nao encontrado!")
+        if clientes.nome != name:
+            print("\nCliente nao encontrado!")
 
     if escolha == 5:
         break
